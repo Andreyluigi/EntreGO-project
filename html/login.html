@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - EntreGo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/login.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body>
+  <!-- Voltar -->
+  <a href="index.html" class="voltar"><i class="bi bi-arrow-left"></i> Voltar</a>
+
+  <section class="login-section">
+    <div class="login-fundo">
+      <div class="login-card">
+        <h2>Login</h2>
+        <form id="form-login">
+          <label for="usuario">Usuário ou E-mail</label>
+          <input type="text" id="usuario" name="usuario" required>
+
+          <label for="senha">Senha</label>
+          <div class="campo-senha">
+            <input type="password" id="senha" name="senha" required>
+            <i class="bi bi-eye-slash" id="toggleSenha"></i>
+          </div>
+
+          <button type="submit">Entrar</button>
+        </form>
+
+        <p class="cadastro-link">
+          Não possui cadastro? <a href="cadastro.html">Cadastre-se</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const toggleSenha = document.getElementById("toggleSenha");
+    const senhaInput = document.getElementById("senha");
+
+    toggleSenha.addEventListener("click", () => {
+      if (senhaInput.type === "password") {
+        senhaInput.type = "text";
+        toggleSenha.classList.replace("bi-eye-slash", "bi-eye");
+      } else {
+        senhaInput.type = "password";
+        toggleSenha.classList.replace("bi-eye", "bi-eye-slash");
+      }
+    });
+  </script>
+</body>
+</html>

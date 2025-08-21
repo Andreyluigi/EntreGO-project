@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro - EntreGo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/cadastro.css">
+</head>
+<body>
+
+<a href="welcome.html" class="voltar">
+  <i class="bi bi-arrow-left"></i> Voltar
+</a>
+
+<section class="cadastro-section">
+  <div class="cadastro-fundo">
+    <div class="cadastro-card">
+      <h2>Cadastro</h2>
+      <form id="formCadastro">
+        
+        <!-- Etapa 1 -->
+        <div class="etapa" id="etapa1">
+          <h4>Dados Pessoais</h4>
+
+          <label for="nome">Nome Completo*</label>
+          <input type="text" id="nome" required>
+
+          <label for="email">E-mail*</label>
+          <input type="email" id="email" required>
+
+          <label for="telefone">Número de Telefone*</label>
+          <input type="tel" id="telefone" placeholder="(99) 99999-9999" required>
+
+          <label for="cpf">CPF*</label>
+          <input type="text" id="cpf" placeholder="000.000.000-00" required>
+        </div>
+
+        <!-- Etapa 2 -->
+        <div class="etapa" id="etapa2" style="display: none;">
+          <h4>Endereço</h4>
+
+          <label for="cep">CEP*</label>
+          <div class="input-group">
+            <input type="text" id="cep" placeholder="00000-000" oninput="formatarCep(this)" required>
+            <button type="button" class="btn-buscar" onclick="buscarCep()">Buscar</button>
+          </div>
+
+          <label for="rua">Rua*</label>
+          <input type="text" id="rua" required>
+
+          <label for="numero">Número*</label>
+          <input type="text" id="numero" required>
+
+          <label for="bairro">Bairro*</label>
+          <input type="text" id="bairro" required>
+
+          <label for="cidade">Cidade*</label>
+          <input type="text" id="cidade" required>
+
+          <label for="uf">Estado*</label>
+          <input type="text" id="uf" required>
+        </div>
+
+        <!-- Etapa 3 -->
+        <div class="etapa" id="etapa3" style="display: none;">
+          <h4>Segurança</h4>
+
+          <label for="senha">Senha*</label>
+          <div class="input-group">
+            <input type="password" id="senha" required>
+            <span class="input-group-text">
+              <i class="bi bi-eye" onclick="toggleSenha('senha', this)"></i>
+            </span>
+          </div>
+
+          <label for="confirmarSenha">Confirmar Senha*</label>
+          <div class="input-group">
+            <input type="password" id="confirmarSenha" required>
+            <span class="input-group-text">
+              <i class="bi bi-eye" onclick="toggleSenha('confirmarSenha', this)"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Botões Navegação -->
+        <div class="navegacao">
+          <button type="button" id="btnVoltar" class="btn-nav" style="display:none;">Voltar</button>
+          <button type="button" id="btnProximo" class="btn-nav">Próximo</button>
+          <button type="submit" id="btnFinalizar" class="btn-success" style="display:none;">Finalizar Cadastro</button>
+        </div>
+      </form>
+      <div class="ja-tem-conta">
+        Já possui cadastro? <a href="login.html">Fazer login</a>
+      </div>
+    </div>
+  </div>
+</section>
+    </div>
+  </div>
+</section>
+
+<script src="../JS/cadastro.js"></script>
+</body>
+</html>

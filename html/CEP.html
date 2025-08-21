@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EntreGo - Meus Pedidos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/CEP.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <a href="index.html">
+      <img src="../arquivos/logo.png" alt="EntreGo" class="logo">
+    </a>
+    <nav class="menu" id="menu"></nav>
+    <a href="login.html" class="botao-login">Login</a>
+  </header>
+
+<section class="cep-section">
+  <div class="cep-background">
+    <div class="cep-card">
+      <h2>Registre seu Endereço</h2>
+      <p>Digite seu CEP para ver sua localização:</p>
+      <input type="text" id="cep" placeholder="00000-000" maxlength="9" oninput="formatarCep(this)">
+      <button onclick="buscarCep()">Buscar CEP</button>
+
+      <div id="cepInfo" style="display: none;">
+        <p id="rua"></p>
+        <p id="bairro"></p>
+        <p id="cidade"></p>
+        <p id="uf"></p>
+        <p id="ddd"></p>
+         <input type="text" id="numero" placeholder="Número">
+          <input type="text" id="complemento" placeholder="Complemento (opcional)">
+          <input type="text" id="referencia" placeholder="Referência (opcional)">
+
+          <button onclick="salvarEndereco()">Salvar Endereço</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section style="max-width: 800px; margin: 40px auto; padding: 20px;">
+    <h2 style="text-align: center;">Endereços Salvos</h2>
+    <div id="listaEnderecos" style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;"></div>
+  </section>
+
+  <script src="../js/CEP.js"></script>
+</body>
+</html>
